@@ -36,3 +36,6 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+# Ignore generated test report
+/target/cucumber-reports.html
