@@ -13,6 +13,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.cucumber.java.en.And;
 
 public class SwagLabsStepDefinitions {
 
@@ -35,10 +36,23 @@ public class SwagLabsStepDefinitions {
         }
     }
 
+    public class CommonSteps {
+
+        @And("I wait for {int} seconds")
+        public void i_wait_for_seconds(int seconds) throws InterruptedException {
+            Thread.sleep(seconds * 1000);
+        }
+    }
+
+    @And("^I wait for (\\d+) seconds$")
+    public void waitForSeconds(int seconds) throws InterruptedException {
+        Thread.sleep(seconds * 1000);
+    }
+
     @Given("User is on SwagLabs login page")
     public void user_is_on_swag_labs_login_page() {
         System.out.println("Opening SwagLabs login page...");
-        driver.get("https://www.saucedemo.com/");
+        Hooks.driver.get("https://www.saucedemo.com/");
     }
 
     @Then("Check SwagLabs Login Header")
@@ -82,7 +96,45 @@ public class SwagLabsStepDefinitions {
         swagLabsStep.enterUsernameAndPassword("standard_user", "secret_sauce");
     }
 
+    @And("SwagLabs Products Page is displayed")
+    public void checkSwagLabsProductsPage() {
+        swagLabsStep.checkswagLabsProductsPage();
+    }
 
+    @And("SwagLabs Filter Dropdown is displayed")
+    public void checkSwagLabsFilterDropdown() { swagLabsStep.checkSwagLabsFilterDropdown(); }
+
+    @And("Click SwagLabs Filter Dropdown")
+    public void clickSwagLabsFilterDropdown() { swagLabsStep.clickSwagLabsFilterDropdown(); }
+
+    @And("SwagLabs Filter Name A to Z is displayed")
+    public void checkSwagLabsFilterNameAToZ() { swagLabsStep.checkSwagLabsFilterNameAToZ(); }
+
+    @And("Click SwagLabs Filter Name A to Z")
+    public void clickSwagLabsFilterNameAToZ() { swagLabsStep.clickSwagLabsFilterNameAToZ(); }
+
+    @And("SwagLabs Filter Name Z to A is displayed")
+    public void checkSwagLabsFilterNameZToA() { swagLabsStep.checkSwagLabsFilterNameZToA(); }
+
+    @And("Click SwagLabs Filter Name Z to A")
+    public void clickSwagLabsFilterNameZToA() { swagLabsStep.clickSwagLabsFilterNameZToA(); }
+
+    @And("SwagLabs Filter Price Low to High is displayed")
+    public void checkSwagLabsFilterPriceLowToHigh() { swagLabsStep.checkSwagLabsFilterPriceLowToHigh(); }
+
+    @And("Click SwagLabs Filter Price Low to High")
+    public void clickSwagLabsFilterPriceLowToHigh() { swagLabsStep.clickSwagLabsFilterPriceLowToHigh(); }
+
+    @And("SwagLabs Filter Price High to Low is displayed")
+    public void checkSwagLabsFilterPriceHighToLow() { swagLabsStep.checkSwagLabsFilterPriceHighToLow(); }
+
+    @And("Click SwagLabs Filter Price High to Low")
+    public void clickSwagLabsFilterPriceHighToLow() { swagLabsStep.clickSwagLabsFilterPriceHighToLow(); }
+
+    @And("I click a random Add to Cart button")
+    public void clickRandomAddToCart() {
+        SwagLabsStep.clickRandomAddToCart(Hooks.driver);
+    }
 
 
 

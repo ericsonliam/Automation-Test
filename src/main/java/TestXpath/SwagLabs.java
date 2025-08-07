@@ -37,6 +37,35 @@ public class SwagLabs {
     @FindBy(xpath = "//div[@class='login-box']//input[@type='submit']")
     public WebElement swagLabsLoginButton;
 
+    @FindBy(xpath = "//div[@id='inventory_container']")
+    public WebElement swagLabsProductsPage;
+
+    @FindBy(xpath = "//div[@class='right_component']//span[@class='select_container']")
+    public WebElement swagLabsFiltderDropdown;
+
+    @FindBy(xpath = "//select[@class='product_sort_container']//option[contains(text(),'Name (A to Z')]")
+    public WebElement swagLabsFilterNameAToZ;
+
+    @FindBy(xpath = "//select[@class='product_sort_container']//option[contains(text(),'Name (Z to A')]")
+    public WebElement swagLabsFilterNameZToA;
+
+    @FindBy(xpath = "//select[@class='product_sort_container']//option[contains(text(),'Price (low to high')]")
+    public WebElement swagLabsFilterPriceLowToHigh;
+
+    @FindBy(xpath = "//select[@class='product_sort_container']//option[contains(text(),'Price (high to low')]")
+    public WebElement swagLabsFilterPriceHighToLow;
+
+    @FindBy(xpath = "//div[@class='inventory_list']//div[@class='inventory_item_description']//button['btn btn_primary btn_small btn_inventory']")
+    public WebElement swagLabsAddToCartButton;
+
+    @FindBy(xpath = "//div[@class='inventory_list']//div[@class='inventory_item_description']//button['btn btn_primary btn_small btn_inventory']")
+    public WebElement RandomCartSelector;
+
+
+
+
+
+
 
 
 
