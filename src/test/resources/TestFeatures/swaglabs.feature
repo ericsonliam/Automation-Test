@@ -27,6 +27,19 @@ Feature: Swag Labs login
     And I wait for 1 seconds
     And I click a random Add to Cart button
     And I wait for 2 seconds
+    And SwagLabs Shopping Cart Icon is displayed
+    And Click SwagLabs Shopping Cart Icon
+    And SwagLabs Checkout Button is displayed
+    And Click SwagLabs Checkout Button
+    And I input "Test" in the First Name field
+    And I input "Automation" in the Last Name field
+    And I input "12345" in the Zip Code field
+    And Click SwagLabs Continue Button
+    And SwagLabs Finish Button is displayed
+    And Click SwagLabs Finish Button
+    And I wait for 2 seconds
+
+
 
 
 

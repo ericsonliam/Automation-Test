@@ -13,7 +13,10 @@ import org.openqa.selenium.WebElement;
 
 
 
+
+
 public class SwagLabsStep {
+
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SwagLabsStep.class);
 
@@ -141,6 +144,76 @@ public class SwagLabsStep {
 
         randomButton.click();
         System.out.println("✅ Clicked random Add to Cart button at index: " + randomIndex);
+    }
+
+    public void checkSwagLabsShoppingCartIcon() {
+        LOGGER.info("Check SwagLabs Shopping Cart Icon is displayed");
+        checkHelper.isElementDisplayed(swagLabs.swagLabsShoppingCartIcon);
+    }
+
+
+    public void clickSwagLabsShoppingCartIcon() {
+        LOGGER.info("Click SwagLabs Shopping Cart Icon");
+        checkHelper.clickElement(swagLabs.swagLabsShoppingCartIcon);
+    }
+
+    public void checkSwagLabsCheckoutButton() {
+        LOGGER.info("Check SwagLabs Checkout Button is displayed");
+        checkHelper.isElementDisplayed(swagLabs.swagLabsCheckoutButton);
+    }
+
+    public void clickSwagLabsCheckoutButton() {
+        LOGGER.info("Click SwagLabs Checkout Button");
+        checkHelper.clickElement(swagLabs.swagLabsCheckoutButton);
+    }
+
+
+    public void inputSwagLabsFirstName(String text) {
+        LOGGER.info("Input '{}' into SwagLabs First Name field", text);
+        swagLabs.swagLabsFirstNameInput.clear();
+        swagLabs.swagLabsFirstNameInput.sendKeys(text);
+    }
+
+    public void inputSwagLabsLastName(String text) {
+        LOGGER.info("Input '{}' into SwagLabs Last Name field", text);
+        swagLabs.swagLabsLastNameInput.clear();
+        swagLabs.swagLabsLastNameInput.sendKeys(text);
+    }
+
+    public void inputSwagLabsZipCode(String text) {
+        LOGGER.info("Input '{}' into SwagLabs Zip Code field", text);
+        swagLabs.swagLabsZipCodeInput.clear();
+        swagLabs.swagLabsZipCodeInput.sendKeys(text);
+    }
+
+    public void checkSwagLabsCancelButton() {
+        LOGGER.info("Check SwagLabs Cancel Button is displayed");
+        checkHelper.isElementDisplayed(swagLabs.swagLabsCancelButton);
+    }
+
+    public void clickSwagLabsCancelButton() {
+        LOGGER.info("Click SwagLabs Cancel Button");
+        checkHelper.clickElement(swagLabs.swagLabsCancelButton);
+    }
+
+    public void checkSwagLabsContinueButton() {
+        LOGGER.info("Check SwagLabs Continue Button is displayed");
+        checkHelper.isElementDisplayed(swagLabs.swagLabsContinueButton);
+    }
+
+    public void clickSwagLabsContinueButton() {
+        LOGGER.info("Click SwagLabs Continue Button");
+        checkHelper.clickElement(swagLabs.swagLabsContinueButton);
+    }
+
+    public void checkSwagLabsFinishButton() {
+        LOGGER.info("Check SwagLabs Finish Button is displayed");
+        checkHelper.isElementDisplayed(swagLabs.swagLabsFinishButton);
+    }
+
+    public void clickSwagLabsFinishButton() {
+        LOGGER.info("Click SwagLabs Finish Button");
+        checkHelper.clickElement(swagLabs.swagLabsFinishButton);
     }
 
 

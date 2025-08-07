@@ -136,6 +136,73 @@ public class SwagLabsStepDefinitions {
         SwagLabsStep.clickRandomAddToCart(Hooks.driver);
     }
 
+    @And("SwagLabs Shopping Cart Icon is displayed")
+    public void clickCartIcon() {
+        swagLabsStep.checkSwagLabsShoppingCartIcon();
+    }
+
+    @And("Click SwagLabs Shopping Cart Icon")
+    public void clickCartIconButton() {
+        swagLabsStep.clickSwagLabsShoppingCartIcon();
+    }
+
+    @And("SwagLabs Checkout Button is displayed")
+    public void checkSwagLabsCheckoutButton() {
+        swagLabsStep.checkSwagLabsCheckoutButton();
+    }
+
+    @And("Click SwagLabs Checkout Button")
+    public void clickSwagLabsCheckoutButton() {
+        swagLabsStep.clickSwagLabsCheckoutButton();
+    }
+
+
+    @And("I input {string} in the First Name field")
+    public void iInputTextInFirstNameField(String text) {
+        swagLabsStep.inputSwagLabsFirstName(text);
+    }
+
+    @And("I input {string} in the Last Name field")
+    public void iInputTextInLastNameField(String text) {
+        swagLabsStep.inputSwagLabsLastName(text);
+    }
+
+    @And("I input {string} in the Zip Code field")
+    public void iInputTextInZipCodeField(String text) {
+        swagLabsStep.inputSwagLabsZipCode(text);
+    }
+
+    @And("SwagLabs Cancel Button is displayed")
+    public void checkSwagLabsCancelButton() {
+        swagLabsStep.checkSwagLabsCancelButton();
+    }
+
+    @And("Click SwagLabs Cancel Button")
+    public void clickSwagLabsCancelButton() {
+        swagLabsStep.clickSwagLabsCancelButton();
+    }
+
+    @And("SwagLabs Continue Button is displayed")
+    public void checkSwagLabsContinueButton() {
+        swagLabsStep.checkSwagLabsContinueButton();
+    }
+
+    @And("Click SwagLabs Continue Button")
+    public void clickSwagLabsContinueButton() {
+        swagLabsStep.clickSwagLabsContinueButton();
+
+    }
+
+    @And("SwagLabs Finish Button is displayed")
+    public void checkSwagLabsFinishButton() {
+        swagLabsStep.checkSwagLabsFinishButton();
+    }
+
+    @And("Click SwagLabs Finish Button")
+    public void clickSwagLabsFinishButton() {
+        swagLabsStep.clickSwagLabsFinishButton();
+    }
+
 
 
 }

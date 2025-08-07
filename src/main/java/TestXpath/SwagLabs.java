@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+
 public class SwagLabs {
 
     WebDriver driver;
@@ -14,6 +15,7 @@ public class SwagLabs {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+
 
     public WebElement getUsernameInput() {
         return driver.findElement(By.id("user-name"));
@@ -58,8 +60,39 @@ public class SwagLabs {
     @FindBy(xpath = "//div[@class='inventory_list']//div[@class='inventory_item_description']//button['btn btn_primary btn_small btn_inventory']")
     public WebElement swagLabsAddToCartButton;
 
-    @FindBy(xpath = "//div[@class='inventory_list']//div[@class='inventory_item_description']//button['btn btn_primary btn_small btn_inventory']")
-    public WebElement RandomCartSelector;
+    @FindBy(xpath = "//div[@class='shopping_cart_container']")
+    public WebElement swagLabsShoppingCartIcon;
+
+    @FindBy(xpath = "//div[@class='cart_footer']/button[contains(text(),'Checkout')]")
+    public WebElement swagLabsCheckoutButton;
+
+    @FindBy(xpath = "//div[@class='checkout_info']//input[@placeholder='First Name']")
+    public WebElement swagLabsFirstNameInput;
+
+    @FindBy(xpath = "//div[@class='checkout_info']//input[@placeholder='Last Name']")
+    public WebElement swagLabsLastNameInput;
+
+    @FindBy(xpath = "//div[@class='checkout_info']//input[@placeholder='Zip/Postal Code']")
+    public WebElement swagLabsZipCodeInput;
+
+    @FindBy(xpath = "//div[@class='checkout_buttons']//button[@class='btn btn_secondary back btn_medium cart_cancel_link']")
+    public WebElement swagLabsCancelButton;
+
+    @FindBy(xpath = "//div[@class='checkout_buttons']//input[@class='submit-button btn btn_primary cart_button btn_action']")
+    public WebElement swagLabsContinueButton;
+
+    @FindBy(xpath = "//div[@class='cart_footer']//button[@class='btn btn_action btn_medium cart_button']")
+    public WebElement swagLabsFinishButton;
+
+
+
+
+
+
+
+
+
+
 
 
 
