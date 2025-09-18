@@ -84,6 +84,15 @@ public class SwagLabs {
     @FindBy(xpath = "//div[@class='cart_footer']//button[@class='btn btn_action btn_medium cart_button']")
     public WebElement swagLabsFinishButton;
 
+    @FindBy(xpath = "//footer[@class='footer']//li[@class='social_twitter']")
+    public WebElement swagLabsTwitterIcon;
+
+    @FindBy(xpath = "//footer[@class='footer']//li[@class='social_facebook']")
+    public WebElement swagLabsFacebookIcon;
+
+    @FindBy(xpath = "//footer[@class='footer']//li[@class='social_linkedin']")
+    public WebElement swagLabsLinkedInIcon;
+
 
 
 

@@ -22,13 +22,13 @@ public class Hooks {
         System.out.println("✅ Browser launched successfully");
     }
 
-    // ✅ Screenshot after each step
     @AfterStep
     public void takeStepScreenshot(Scenario scenario) {
-        String screenshotPath = ScreenshotUtils.takeScreenshot(driver, scenario.getName().replace(" ", "_"));
+        String screenshotPath = ScreenshotUtils.takeScreenshot(
+                driver, scenario.getName().replace(" ", "_")
+        );
         System.out.println("📸 Step screenshot saved at: " + screenshotPath);
 
-        // Attach screenshot to Cucumber report
         try {
             byte[] screenshotBytes = ScreenshotUtils.getScreenshotAsBytes(driver);
             scenario.attach(screenshotBytes, "image/png", "Step Screenshot");

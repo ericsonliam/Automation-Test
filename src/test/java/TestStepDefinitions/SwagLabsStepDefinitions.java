@@ -11,9 +11,8 @@ import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import io.cucumber.java.en.And;
+import controllers.Hooks;
 
 public class SwagLabsStepDefinitions {
 
@@ -21,6 +20,7 @@ public class SwagLabsStepDefinitions {
 
     public SwagLabsStepDefinitions() {
         this.swagLabsStep = new SwagLabsStep(
+                Hooks.driver,
                 new ClickHelper(Hooks.driver),
                 new CheckHelper(Hooks.driver),
                 new SwagLabs(Hooks.driver)
@@ -203,6 +203,33 @@ public class SwagLabsStepDefinitions {
         swagLabsStep.clickSwagLabsFinishButton();
     }
 
+    @And("SwagLabs Twitter Icon is displayed")
+    public void checkSwagLabsTwitterIcon() {
+        swagLabsStep.checkswagLabsTwitterIcon(); }
+
+    @And("Click SwagLabs Twitter Icon")
+    public void clickSwagLabsTwitterIcon() {
+        swagLabsStep.clickswagLabsTwitterIcon(); }
+
+    @And("SwagLabs Facebook Icon is displayed")
+    public void checkSwagLabsFacebookIcon() {
+        swagLabsStep.checkswagLabsFacebookIcon(); }
+
+    @And("Click SwagLabs Facebook Icon")
+    public void clickSwagLabsFacebookIcon() {
+        swagLabsStep.clickswagLabsFacebookIcon(); }
+
+    @And("SwagLabs LinkedIn Icon is displayed")
+    public void checkSwagLabsLinkedInIcon() {
+        swagLabsStep.checkswagLabsLinkedInIcon(); }
+
+    @And("Click SwagLabs LinkedIn Icon")
+    public void clickSwagLabsLinkedInIcon() {
+        swagLabsStep.clickswagLabsLinkedInIcon(); }
+
+    @And("Verify Twitter page is opened")
+    public void handleTwitterWindow() {
+        swagLabsStep.handleTwitterWindow(); }
 
 
 }

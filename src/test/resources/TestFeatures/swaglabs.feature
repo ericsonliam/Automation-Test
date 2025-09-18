@@ -9,7 +9,12 @@ Feature: Swag Labs login
     And Input SwagLabs Username and Password
     And Check SwagLabs Login Button is displayed
     And Click SwagLabs Login Button
+    And I wait for 3 seconds
     And SwagLabs Products Page is displayed
+    And SwagLabs Twitter Icon is displayed
+    And Click SwagLabs Twitter Icon
+    And Verify Twitter page is opened
+    And I wait for 1 seconds
     And SwagLabs Filter Dropdown is displayed
     And Click SwagLabs Filter Dropdown
     And I wait for 1 seconds
@@ -31,7 +36,7 @@ Feature: Swag Labs login
     And Click SwagLabs Shopping Cart Icon
     And SwagLabs Checkout Button is displayed
     And Click SwagLabs Checkout Button
-    And I input "Test" in the First Name field
+    And I input "Name" in the First Name field
     And I input "Automation" in the Last Name field
     And I input "12345" in the Zip Code field
     And Click SwagLabs Continue Button

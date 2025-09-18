@@ -10,6 +10,11 @@ import java.util.Random;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import java.util.Set;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.TimeoutException;
+import java.time.Duration;
 
 
 
@@ -23,11 +28,13 @@ public class SwagLabsStep {
     private ClickHelper clickHelper;
     private CheckHelper checkHelper;
     private SwagLabs swagLabs;
+    private WebDriver driver;
 
-    public SwagLabsStep(ClickHelper clickHelper, CheckHelper checkHelper, SwagLabs swagLabs) {
+    public SwagLabsStep(WebDriver driver, ClickHelper clickHelper, CheckHelper checkHelper, SwagLabs swagLabs) {
         this.clickHelper = clickHelper;
         this.checkHelper = checkHelper;
         this.swagLabs = swagLabs;
+        this.driver = driver;
     }
 
 
@@ -38,6 +45,7 @@ public class SwagLabsStep {
         swagLabs.getPasswordInput().clear();
         swagLabs.getPasswordInput().sendKeys(password);
     }
+
 
     public void checkswagLabsLoginHeader() {
         LOGGER.info("Check SwagLabs Login Header");
@@ -51,7 +59,7 @@ public class SwagLabsStep {
 
     public void clickswagLabsusernameInput() {
         LOGGER.info("Click SwagLabs Username Input");
-        checkHelper.clickElement(swagLabs.swagLabsusernameInput);
+        clickHelper.click(swagLabs.swagLabsusernameInput);
     }
 
     public void checkswagLabspasswordInput() {
@@ -61,7 +69,7 @@ public class SwagLabsStep {
 
     public void clickswagLabspasswordInput() {
         LOGGER.info("Click SwagLabs Password Input");
-        checkHelper.clickElement(swagLabs.swagLabspasswordInput);
+        clickHelper.click(swagLabs.swagLabspasswordInput);
     }
 
     public void checkswagLabsLoginButton() {
@@ -71,7 +79,7 @@ public class SwagLabsStep {
 
     public void clickswagLabsLoginButton() {
         LOGGER.info("Click SwagLabs Login Button");
-        checkHelper.clickElement(swagLabs.swagLabsLoginButton);
+        clickHelper.click(swagLabs.swagLabsLoginButton);
     }
 
     public void checkswagLabsProductsPage() {
@@ -86,7 +94,7 @@ public class SwagLabsStep {
 
     public void clickSwagLabsFilterDropdown() {
         LOGGER.info("Click SwagLabs Filter Dropdown");
-        checkHelper.clickElement(swagLabs.swagLabsFiltderDropdown);
+        clickHelper.click(swagLabs.swagLabsFiltderDropdown);
     }
 
     public void checkSwagLabsFilterNameAToZ() {
@@ -96,7 +104,7 @@ public class SwagLabsStep {
 
     public void clickSwagLabsFilterNameAToZ() {
         LOGGER.info("Click SwagLabs Filter Name A to Z");
-        checkHelper.clickElement(swagLabs.swagLabsFilterNameAToZ);
+        clickHelper.click(swagLabs.swagLabsFilterNameAToZ);
     }
 
     public void checkSwagLabsFilterNameZToA() {
@@ -106,7 +114,7 @@ public class SwagLabsStep {
 
     public void clickSwagLabsFilterNameZToA() {
         LOGGER.info("Click SwagLabs Filter Name Z to A");
-        checkHelper.clickElement(swagLabs.swagLabsFilterNameZToA);
+        clickHelper.click(swagLabs.swagLabsFilterNameZToA);
     }
 
     public void checkSwagLabsFilterPriceLowToHigh() {
@@ -116,7 +124,7 @@ public class SwagLabsStep {
 
     public void clickSwagLabsFilterPriceLowToHigh() {
         LOGGER.info("Click SwagLabs Filter Price Low to High");
-        checkHelper.clickElement(swagLabs.swagLabsFilterPriceLowToHigh);
+        clickHelper.click(swagLabs.swagLabsFilterPriceLowToHigh);
     }
 
     public void checkSwagLabsFilterPriceHighToLow() {
@@ -126,7 +134,7 @@ public class SwagLabsStep {
 
     public void clickSwagLabsFilterPriceHighToLow() {
         LOGGER.info("Click SwagLabs Filter Price High to Low");
-        checkHelper.clickElement(swagLabs.swagLabsFilterPriceHighToLow);
+        clickHelper.click(swagLabs.swagLabsFilterPriceHighToLow);
     }
 
     public static void clickRandomAddToCart(WebDriver driver) {
@@ -154,7 +162,7 @@ public class SwagLabsStep {
 
     public void clickSwagLabsShoppingCartIcon() {
         LOGGER.info("Click SwagLabs Shopping Cart Icon");
-        checkHelper.clickElement(swagLabs.swagLabsShoppingCartIcon);
+        clickHelper.click(swagLabs.swagLabsShoppingCartIcon);
     }
 
     public void checkSwagLabsCheckoutButton() {
@@ -164,7 +172,7 @@ public class SwagLabsStep {
 
     public void clickSwagLabsCheckoutButton() {
         LOGGER.info("Click SwagLabs Checkout Button");
-        checkHelper.clickElement(swagLabs.swagLabsCheckoutButton);
+        clickHelper.click(swagLabs.swagLabsCheckoutButton);
     }
 
 
@@ -193,7 +201,7 @@ public class SwagLabsStep {
 
     public void clickSwagLabsCancelButton() {
         LOGGER.info("Click SwagLabs Cancel Button");
-        checkHelper.clickElement(swagLabs.swagLabsCancelButton);
+        clickHelper.click(swagLabs.swagLabsCancelButton);
     }
 
     public void checkSwagLabsContinueButton() {
@@ -203,7 +211,7 @@ public class SwagLabsStep {
 
     public void clickSwagLabsContinueButton() {
         LOGGER.info("Click SwagLabs Continue Button");
-        checkHelper.clickElement(swagLabs.swagLabsContinueButton);
+        clickHelper.click(swagLabs.swagLabsContinueButton);
     }
 
     public void checkSwagLabsFinishButton() {
@@ -213,9 +221,63 @@ public class SwagLabsStep {
 
     public void clickSwagLabsFinishButton() {
         LOGGER.info("Click SwagLabs Finish Button");
-        checkHelper.clickElement(swagLabs.swagLabsFinishButton);
+        clickHelper.click(swagLabs.swagLabsFinishButton);
     }
 
+    public void checkswagLabsTwitterIcon() {
+        LOGGER.info("Check SwagLabs Twitter Icon is displayed");
+        checkHelper.isElementDisplayed(swagLabs.swagLabsTwitterIcon);
+    }
 
+    public void clickswagLabsTwitterIcon() {
+        LOGGER.info("Click SwagLabs Twitter Icon(raw click)");
+        clickHelper.click(swagLabs.swagLabsTwitterIcon);
+    }
+
+    public void checkswagLabsFacebookIcon() {
+        LOGGER.info("Check SwagLabs Facebook Icon is displayed");
+        checkHelper.isElementDisplayed(swagLabs.swagLabsFacebookIcon);
+    }
+
+    public void clickswagLabsFacebookIcon() {
+        LOGGER.info("Click SwagLabs Facebook Icon");
+        clickHelper.click(swagLabs.swagLabsFacebookIcon);
+    }
+
+    public void checkswagLabsLinkedInIcon() {
+        LOGGER.info("Check SwagLabs LinkedIn Icon is displayed");
+        checkHelper.isElementDisplayed(swagLabs.swagLabsLinkedInIcon);
+    }
+
+    public void clickswagLabsLinkedInIcon() {
+        LOGGER.info("Click SwagLabs LinkedIn Icon");
+        clickHelper.click(swagLabs.swagLabsLinkedInIcon);
+    }
+
+    public void handleTwitterWindow() {
+        String parentWindow = driver.getWindowHandle();
+        Set<String> allWindows = driver.getWindowHandles();
+
+        for (String window : allWindows) {
+            if (!window.equals(parentWindow)) {
+                driver.switchTo().window(window);
+
+                LOGGER.info("Switched to Twitter window: " + driver.getTitle());
+                LOGGER.info("Twitter URL: " + driver.getCurrentUrl());
+
+                try {
+                    Thread.sleep(1000); // wait 1s
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                driver.close();
+                LOGGER.info("Closed Twitter window");
+
+                driver.switchTo().window(parentWindow);
+                LOGGER.info("Returned to main window: " + driver.getTitle());
+            }
+        }
+    }
 
 }
